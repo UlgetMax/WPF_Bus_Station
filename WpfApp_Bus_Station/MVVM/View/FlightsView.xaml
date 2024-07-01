@@ -1,0 +1,80 @@
+﻿<UserControl x:Class="WpfApp_Bus_Station.MVVM.View.FlightsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApp_Bus_Station.MVVM.View"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="765" d:DesignWidth="830" Background="#fff">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel>
+            <TextBlock Text="Табліца рэйсаў"
+                       Foreground="#000"
+                       FontSize="28"
+                       HorizontalAlignment="Left"
+                       Margin="0 0 0 20"/>      
+            <StackPanel Orientation="Horizontal">
+                <Border Width="800" Height="330">
+                    <DataGrid x:Name="dataGridView"/>
+
+                </Border>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
+                <StackPanel Orientation="Vertical">
+                    <TextBox x:Name="textBoxNumReis" materialDesign:HintAssist.Hint="Номер рейса" FontSize="18" HorizontalAlignment="Left" Foreground="#000" Width="220" Margin="30,0,80,10"/>
+                    <!--<TextBox x:Name="textBoxDataReis" materialDesign:HintAssist.Hint="Дата рейса" FontSize="18" HorizontalAlignment="Left" Foreground="#000" Width="220" Margin="30,0,0,10"/>-->
+                    <DatePicker x:Name="datePickerDataReis" materialDesign:HintAssist.Hint="Дата рейса" FontSize="18" HorizontalAlignment="Left" Foreground="#000" Width="220" Margin="30,0,0,10"/>
+                    <ComboBox x:Name="comboBoxTimeOtpravl" materialDesign:HintAssist.Hint="Время отправления" FontSize="18" HorizontalAlignment="Left" Foreground="#000" Width="220" Margin="30,0,0,10"/>
+                    <ComboBox x:Name="comboBoxTimePrib" materialDesign:HintAssist.Hint="Время прибытия" FontSize="18" HorizontalAlignment="Left" Foreground="#000" Width="220" Margin="30,0,0,10"/>
+                    <TextBox x:Name="textBoxKolvoMest" materialDesign:HintAssist.Hint="Количество мест" FontSize="18" HorizontalAlignment="Left" Foreground="#000" Width="220" Margin="30,0,0,10"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical">
+                    <TextBox x:Name="textBoxPunktOtpravlenia" materialDesign:HintAssist.Hint="Пункт отправления" FontSize="18" HorizontalAlignment="Left" Foreground="#000" Width="360" Margin="30,0,60,10"/>
+                    <TextBox x:Name="textBoxPunktNaznachenia" materialDesign:HintAssist.Hint="Пункт назначения" FontSize="18" HorizontalAlignment="Left" Foreground="#000" Width="360" Margin="30,0,0,10"/>
+                    <TextBox x:Name="textBoxStoimostBileta" materialDesign:HintAssist.Hint="Стоимость билета" FontSize="18" HorizontalAlignment="Left" Foreground="#000" Width="360" Margin="30,0,0,10"/>
+                    <ComboBox x:Name="comboBoxStatusReis"
+                                      materialDesign:HintAssist.Hint="Статус рейса"
+                                      FontSize="18"
+                                      HorizontalAlignment="Left"
+                                      Foreground="#000"
+                                      Width="360"
+                                      Margin="30,0,0,10">
+                        <ComboBoxItem Content="Отправлен"/>
+                        <ComboBoxItem Content="Не отправлен"/>
+                    </ComboBox>
+
+                </StackPanel>
+
+
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal" Margin="30 30 30 20">
+                <StackPanel Orientation="Vertical">
+                    <Button Click="ButtonAdd_Click" VerticalAlignment="Top" HorizontalAlignment="Right" Background="#37376c" Foreground="#fff" Content="Добавить" Margin="0,0,0,0" Width="215">
+                        <Button.Effect>
+                            <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
+                        </Button.Effect>
+                    </Button>
+                    <Button Click="ButtonUpdate_Click" VerticalAlignment="Top" HorizontalAlignment="Right" Background="#37376c" Foreground="#fff" Content="Обновить" Margin="0,20,0,0" Width="215">
+                        <Button.Effect>
+                            <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
+                        </Button.Effect>
+                    </Button>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Width="480">
+                    <Button Click="ButtonDelete_Click" VerticalAlignment="Top" HorizontalAlignment="Right" Background="#37376c" Foreground="#fff" Content="Удалить" Margin="0,0,0,0" Height="40" Width="215">
+                        <Button.Effect>
+                            <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
+                        </Button.Effect>
+                    </Button>
+
+                    <TextBox x:Name="textBoxIdDelete" materialDesign:HintAssist.Hint="ID для удаления" FontSize="18" VerticalAlignment="Bottom" HorizontalAlignment="Right" Foreground="#000" Width="220" Margin="0,10,0,0"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
+    
+</UserControl>

@@ -1,0 +1,105 @@
+﻿<Window x:Class="WpfApp_Bus_Station.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp_Bus_Station"
+        xmlns:viewModel="clr-namespace:WpfApp_Bus_Station.MVVM.ViewModel"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="MainWindow" Height="750" Width="1100" ResizeMode="NoResize" Background="#fff" WindowStartupLocation="CenterScreen">
+    
+    <!--AllowsTransparency="True" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="Transparent"-->
+    
+    <!--7мин-->
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <Border>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="260"/>
+                    <ColumnDefinition Width="840"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="85"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+
+                <TextBlock Text="©️ UlgetMax"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       Foreground="#000"
+                       FontSize="32"/>
+                
+                <StackPanel Grid.Row="1">
+
+                    <RadioButton Content="Галоўная"
+                                 Height="100"
+                                 Foreground="#000"
+                                 FontSize="24"
+                                 Style="{StaticResource MenuButtonTheme}"
+                                 IsChecked="True"
+                                 Command="{Binding HomeViewCommand}"/>
+
+                    <RadioButton Content="Білеты"
+                                 Height="100"
+                                 Foreground="#000"
+                                 FontSize="24"
+                                 Style="{StaticResource MenuButtonTheme}"
+                                 Command="{Binding TicketsViewCommand}"/>
+
+                    <RadioButton Content="Пасажыры"
+                                 Height="100"
+                                 Foreground="#000"
+                                 FontSize="24"
+                                 Style="{StaticResource MenuButtonTheme}"
+                                 Command="{Binding PassengersViewCommand}"/>
+
+                    <RadioButton Content="Рэйсы"
+                                 Height="100"
+                                 Foreground="#000"
+                                 FontSize="24"
+                                 Style="{StaticResource MenuButtonTheme}"
+                                 Command="{Binding FlightsViewCommand}"/>
+
+                    <RadioButton Content="Пра нас"
+                                 Height="100"
+                                 Foreground="#000"
+                                 FontSize="24"
+                                 Style="{StaticResource MenuButtonTheme}"
+                                 Command="{Binding AboutViewCommand}"/>
+                </StackPanel>
+
+                <TextBox Width="250"
+                         Height="40"
+                         VerticalAlignment="Center"
+                         HorizontalAlignment="Left"
+                         Margin="5"
+                         Grid.Column="1"
+                         Foreground="#000"
+                         materialDesign:HintAssist.Hint="Поиск"
+                         FontSize="19"
+                         />
+                <ContentControl Grid.Row="1"
+                                Grid.Column="1"
+                                Margin="10"
+                                Content="{Binding CurrentView}"/>
+
+
+                <Button Grid.Column="5" Click="Button_Exit_Click" HorizontalAlignment="Right" Background="#37376c" Foreground="#fff" Content="Выйти" Margin="0,0,80,0" Width="115">
+                    <Button.Effect>
+                        <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
+                    </Button.Effect>
+                </Button>
+            </Grid>
+
+        </Border>
+    </Grid>
+    
+    
+</Window>

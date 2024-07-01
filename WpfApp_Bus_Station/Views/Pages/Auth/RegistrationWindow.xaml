@@ -1,0 +1,54 @@
+﻿<Window x:Class="WpfApp_Bus_Station.Views.Pages.Auth.RegistrationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp_Bus_Station.Views.Pages.Auth"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="RegistrationWindow" Height="600" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Cursor="Hand">
+    <Grid Background="#fff">
+        <Border MinWidth="300" Margin="45,0,45,0" Background="#fff" VerticalAlignment="Center" Padding="30" MaxWidth="650" Height="400" CornerRadius="20">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="50" Color="LightGray" ShadowDepth="10"/>
+            </Border.Effect>
+            <StackPanel>
+                <TextBlock Text="Рэгiстрацыя" FontSize="30" FontWeight="Bold" TextAlignment="Center" Margin="0 0 0 40" Foreground="#000"></TextBlock>
+
+                <Grid Margin="0 0 0 20">
+                    <Grid Margin="0,0,295,0">
+                        <TextBox x:Name="textBoxLogin" materialDesign:HintAssist.Hint="Імя" FontSize="18" HorizontalAlignment="Left" Foreground="#000" Width="220" Margin="30,0,0,0"/>
+                    </Grid>
+                    <Grid Margin="295,0,0,0">
+                        <PasswordBox x:Name="textBoxPassword" materialDesign:HintAssist.Hint="Пароль" FontSize="18" HorizontalAlignment="Left" Foreground="#000" Width="220" Margin="0,0,30,0" />
+                    </Grid>
+
+
+                </Grid>
+                <!--<TextBox x:Name="textBoxRol" materialDesign:HintAssist.Hint="Роля" FontSize="18" TextAlignment="Center" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Foreground="#000" Width="350"/>-->
+                <!--<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <ComboBox x:Name="comboBoxRol"
+                              materialDesign:HintAssist.Hint="Роля"
+                              FontSize="18"
+                              HorizontalAlignment="Center"
+                              Foreground="#000"
+                              Width="260"
+                              Margin="0,0,0,10">
+                        <ComboBoxItem Content="Диспетчер"/>
+                        <ComboBoxItem Content="Пользователь"/>
+                    </ComboBox>
+                </StackPanel>-->
+                <Grid Margin="0 60 0 20">
+
+                    <TextBlock Text="У вас уже есть аккаунт?" FontSize="10" FontWeight="Bold" TextAlignment="Left" Margin="30 0 0 0" Foreground="#000"/>
+                    <Button Click="Button_Login_Click" HorizontalAlignment="Left" Background="#37376c" Foreground="#fff" Content="Увайсці" Margin="30,20,0,0" Width="215">
+                        <Button.Effect>
+                            <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
+                        </Button.Effect>
+                    </Button>
+                    <Button Click="Button_Reg_Click" VerticalAlignment="Bottom" HorizontalAlignment="Right" Content="Зарэгістравацца" Style="{StaticResource MaterialDesignFlatButton}" Foreground="#000" Margin="0,0,0,0" Width="191"></Button>
+                </Grid>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
